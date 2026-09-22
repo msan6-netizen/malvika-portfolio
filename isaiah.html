@@ -1,0 +1,95 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Isaiah — Voice help for older adults</title>
+<meta name="description" content="Isaiah is a patient neural voice agent that walks older adults through everyday technology problems in plain language, and hands off to a real person when needed. An independent AI product prototype by Malvika Sanghvi.">
+<meta property="og:title" content="Isaiah — Voice help for older adults">
+<meta property="og:description" content="A patient neural voice agent for older adults, with RAG-grounded steps and a human hand-off. Independent AI product prototype by Malvika Sanghvi.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8E%A7%3C/text%3E%3C/svg%3E">
+<style>
+:root{--bg:#f4efe6;--card:#ffffff;--ink:#2a2a28;--mut:#6d6a63;--teal:#2a9d8f;--teal-d:#1f7d72;--teal-soft:#e7f4f1;--line:#e7e0d3;--fs:1}
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(160deg,#fbf7ef 0%,#eef5f1 55%,#e4efe9 100%);color:var(--ink);font-family:"Segoe UI",-apple-system,Roboto,Helvetica,Arial,sans-serif;line-height:1.55;min-height:100vh;font-size:calc(16px*var(--fs))}
+.top{max-width:760px;margin:0 auto;padding:18px 20px 0}.back{color:var(--mut);text-decoration:none;font-size:15px}
+.wrap{max-width:760px;margin:0 auto;padding:10px 20px 50px}
+.tagrow{color:var(--teal-d);font-weight:700;letter-spacing:.06em;text-transform:uppercase;font-size:12.5px;margin:10px 0 2px}
+h1{font-size:2em;margin:0 0 6px}.lede{color:var(--mut);font-size:1.05em;margin:0 0 16px}
+.controls{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:12px}
+.langs{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.langlbl{color:var(--mut);font-size:.82em;margin-right:2px}
+.lang{border:2px solid var(--line);background:#fff;color:var(--teal-d);border-radius:999px;padding:5px 12px;font-size:.9em;font-weight:600}
+.tsize{display:flex;align-items:center;gap:6px;color:var(--mut);font-size:.85em}
+.tsize button{border:2px solid var(--line);background:#fff;border-radius:8px;width:38px;height:34px;font-weight:700;cursor:pointer;color:var(--ink)}
+.vnote{max-width:760px;margin:0 auto 14px;color:var(--mut);font-size:.8em;text-align:center;background:#fff;border:1px solid var(--line);border-radius:12px;padding:9px 14px;line-height:1.5}
+.card{background:var(--card);border:1px solid var(--line);border-radius:30px;padding:28px 22px 30px;box-shadow:0 24px 60px rgba(42,120,110,.14);text-align:center;position:relative;overflow:hidden}
+.card::before{content:"";position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,#37b0a1,#2a7d72)}
+.avatar{width:112px;height:112px;border-radius:50%;margin:2px auto 8px;background:linear-gradient(150deg,#37b0a1,#2a7d72);display:flex;align-items:center;justify-content:center;color:#fff;font-size:2.6em;font-weight:700;box-shadow:0 12px 30px rgba(42,157,143,.35)}
+.name{font-weight:700;font-size:1.1em;margin-top:2px}.name span{color:var(--mut);font-weight:400;font-size:.82em}
+.instruct{font-size:1.15em;line-height:1.6;margin:12px auto 6px;max-width:560px}
+.widgetbox{margin:18px auto 6px;min-height:96px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px}
+.widgetnote{color:var(--mut);font-size:.85em;max-width:520px;margin:6px auto 0;line-height:1.5}
+.human{margin-top:18px;color:var(--mut);font-size:.98em;line-height:1.5}
+.human b{color:var(--teal-d)}
+.designbox{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px 20px;margin-top:24px}
+.designbox h2{font-size:1.05em;margin:0 0 8px}.designbox li{margin:7px 0;font-size:.95em}.designbox b{color:var(--teal-d)}
+.impact{background:var(--teal-soft);border:1px solid #cfe9e2;border-radius:14px;padding:14px 16px;margin-top:16px;font-size:.95em;line-height:1.6}
+.impact b{color:var(--teal-d)}
+.foot{color:var(--mut);font-size:.8em;margin-top:22px;line-height:1.6}
+@media(max-width:560px){h1{font-size:1.6em}}
+elevenlabs-convai{display:block}
+</style></head><body>
+<div class="top"><a class="back" href="index.html">&larr; Back to portfolio</a>
+<div class="tagrow">Independent project &middot; Voice AI &middot; Accessibility</div>
+<h1>Isaiah</h1>
+<p class="lede">A patient voice helper for older adults navigating technology, in plain, jargon-free steps, with a hand-off to a real person when needed.</p></div>
+<div class="wrap">
+<div class="controls">
+ <div class="langs"><span class="langlbl">Speaks:</span>
+  <span class="lang">English</span><span class="lang">हिंदी</span><span class="lang">বাংলা</span><span class="lang">தமிழ்</span><span class="lang">తెలుగు</span><span class="lang">मराठी</span><span class="lang">ગુજરાતી</span><span class="lang">Español</span>
+ </div>
+ <div class="tsize">Text<button id="tminus" title="Smaller text" aria-label="Smaller text">A&minus;</button><button id="tplus" title="Bigger text" aria-label="Bigger text">A+</button></div>
+</div>
+<p class="vnote">This is a live voice agent. Tap the button in the card, allow your microphone when asked, and just talk. Speak whichever language is easiest for you. (The voice agent loads only on the published site, not in a preview.)</p>
+<div class="card">
+ <div class="avatar" id="avatar">I</div>
+ <div class="name">Isaiah <span>&middot; here to help</span></div>
+ <p class="instruct">Tap below and tell me what is happening with your device. Take your time, there is no rush, and nothing you ask is a silly question.</p>
+ <div class="widgetbox">
+  <elevenlabs-convai agent-id="agent_9601m1sdtdzeek9szgf0b41dcb6k"></elevenlabs-convai>
+  <p class="widgetnote" id="wnote">If you do not see a “Start a call” button here, you are viewing a preview. The live voice agent runs on the published web page, where it can use your microphone.</p>
+ </div>
+ <div class="human">Prefer a person? Just say <b>“I would like to talk to a real person”</b> and Isaiah will connect you. Anything to do with passwords, accounts, or payments always goes to a human.</div>
+</div>
+<div class="designbox">
+ <h2>Why it matters</h2>
+ <ul>
+  <li><b>Before:</b> when technology confuses them, older adults often wait on a busy family member or give up on the task entirely.</li>
+  <li><b>After:</b> common problems get solved in one patient, plain-language call, and only the small share that truly needs a human, or anything touching accounts and payments, is handed off.</li>
+ </ul>
+</div>
+<div class="designbox">
+ <h2>Designed for a vulnerable user, not a power user</h2>
+ <ul>
+  <li><b>Ease first:</b> large adjustable type, one obvious button, high contrast, and no time pressure, so it works when someone is anxious.</li>
+  <li><b>Emotional safety before the fix,</b> one micro-step at a time, never "just" or "simply."</li>
+  <li><b>A human is always one request away,</b> and passwords, accounts, and payments are always handed to a person.</li>
+  <li><b>Meets people in their language</b>, English, Spanish, and major Indian languages, spoken back in the same language.</li>
+ </ul>
+ <div class="impact"><b>Reasoned impact:</b> the segment most tech support ignores is older adults, who abandon tasks or route every problem to a relative. A calm voice agent that resolves common cases in the moment, grounds each step in real device manuals instead of guessing, and cleanly escalates the rest deflects the "call my kid" moment while keeping reassurance and account-safety human. <b>What stays human:</b> hands-on judgment, anything touching credentials or money, and any caller who simply wants a person.</div>
+</div>
+<p class="foot">Isaiah is a designed persona and working prototype. The voice agent runs on ElevenLabs Agents (real-time speech-in and speech-out with one warm neural voice, multilingual, RAG-grounded on real device-support material) with automatic hand-off to a human. For this prototype the human-transfer and callback-scheduling tools are wired to lightweight mock endpoints rather than a paid telephony or scheduling account, so the full workflow can be demonstrated end to end without live billing. Indian-language greetings are AI-drafted and pending a native-speaker review. Built by Malvika Sanghvi.</p>
+</div>
+<script>
+// Accessibility: adjustable page text size
+var fs=1,root=document.documentElement;
+function applyFs(){root.style.setProperty("--fs",fs);}
+document.getElementById("tplus").onclick=function(){fs=Math.min(1.6,fs+.15);applyFs();};
+document.getElementById("tminus").onclick=function(){fs=Math.max(.85,fs-.15);applyFs();};
+// Hide the preview note once the widget's custom element has actually upgraded/rendered
+window.addEventListener("load",function(){
+  setTimeout(function(){
+    var el=document.querySelector("elevenlabs-convai");
+    if(el && el.shadowRoot){var n=document.getElementById("wnote");if(n)n.style.display="none";}
+  },2500);
+});
+</script>
+<script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async></script>
+</body></html>

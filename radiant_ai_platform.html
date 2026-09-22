@@ -1,0 +1,110 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Radiant AI Assistant &amp; Analytics Platform</title><style>
+:root{--bg:#0f1115;--card:#171a21;--line:#252a34;--txt:#e6e9ef;--mut:#9aa4b2;--acc:#6ea8fe;--grn:#7ee0c0;--warn:#ffb454}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--txt);font-family:Inter,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.55}
+.wrap{max-width:1080px;margin:0 auto;padding:30px 20px 56px}
+.eyebrow{color:var(--acc);font-weight:600;letter-spacing:.08em;text-transform:uppercase;font-size:12px;margin:0 0 6px}
+h1{font-size:27px;margin:0 0 8px}.sub{color:var(--mut);margin:0 0 18px;max-width:840px}
+.tabs{display:flex;gap:4px;border-bottom:1px solid var(--line);margin-bottom:18px;flex-wrap:wrap}
+.tabs button{background:none;border:none;color:var(--mut);padding:10px 14px;font-size:13.5px;cursor:pointer;border-bottom:2px solid transparent}
+.tabs button.on{color:var(--txt);border-bottom-color:var(--acc);font-weight:600}
+.tab{display:none}.tab.on{display:block}
+h2{font-size:15px;margin:22px 0 4px}.note{color:var(--mut);font-size:12.5px;margin:0 0 12px;max-width:840px}
+.mrow{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.mc{background:var(--card);border:1px solid var(--line);border-radius:13px;padding:14px}
+.mc .mn{color:var(--mut);font-size:12px;font-weight:600}.mc .ml{font-size:21px;font-weight:700;color:var(--grn);margin-top:3px}.mc .cs{color:var(--mut);font-size:11px;margin-top:2px}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin-top:12px}.panel h3{margin:0 0 12px;font-size:14px}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.arch{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;margin-top:6px}
+.box{background:#0d0f14;border:1px solid var(--line);border-radius:10px;padding:10px 14px;text-align:center;font-size:13px}.box b{display:block}.box span{color:var(--mut);font-size:11px}
+.hub{max-width:330px;margin:0 auto;border-color:var(--acc)}.conn{text-align:center;color:var(--mut);font-size:11px;letter-spacing:.1em;margin:8px 0}
+.spokes{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px}
+.pipe{display:flex;gap:8px;align-items:center;justify-content:center;flex-wrap:wrap;margin-top:16px;color:var(--mut);font-size:12px}.pipe .box{padding:8px 12px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:6px}
+.col{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px}.col.bad h3{color:#ff8b8b}.col.good h3{color:var(--grn)}.col h3{margin:0 0 10px;font-size:13px}.col ul{margin:0;padding-left:18px}.col li{margin:6px 0;font-size:13.5px}
+.payoff{background:#132018;border:1px solid #244b38;border-radius:12px;padding:14px;text-align:center;margin-top:12px;font-size:15px}.payoff b{color:var(--grn);font-size:20px}
+.pt{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin-top:6px}.pt li{margin:7px 0;font-size:13.5px}.pt b{color:var(--acc)}
+.cloud{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;text-align:center;line-height:2}
+.foot{color:var(--mut);font-size:12px;margin-top:26px;border-top:1px solid var(--line);padding-top:14px}
+@media(max-width:820px){.mrow,.spokes,.g2,.two{grid-template-columns:1fr 1fr}}
+</style></head><body><div class="wrap">
+<p class="eyebrow">Radiant Global Logistics &middot; AI Product (Intern), 2026</p>
+<h1>A multi-LLM assistant, and the analytics &amp; evaluation platform behind it</h1>
+<p class="sub">Ops, sales, and finance teams had to navigate SAP transaction codes and buried SOPs to answer routine questions. I built a natural-language assistant over SAP TM, a ClickHouse warehouse, and a RAG knowledge base, plus a self-generating, multi-tab analytics dashboard (a business-leadership view and a full engineering view) and an automated evaluation system that scores every answer. Explore the dashboard tabs below.</p>
+<div class="panel" style="margin-bottom:22px"><h3>See it in action</h3>
+ <img src="radiant_assistant_demo.gif" alt="Radiant AI assistant demo" style="width:100%;border-radius:10px;border:1px solid var(--line)">
+ <p class="note" style="margin-top:10px">Illustrative recreation of the OpenWebUI assistant (mock data): an air-freight quote request is routed to the Google ADK agent pipeline, a reply email is drafted, the full tool-call trace is expandable for transparency, and the built-in 0-to-10 feedback capture prompts for reasons on low scores.</p></div>
+<div class="tabs">
+ <button class="on" onclick="tab(0,this)">Executive Summary</button>
+ <button onclick="tab(1,this)">Operations</button>
+ <button onclick="tab(2,this)">System Health</button>
+ <button onclick="tab(3,this)">Online Eval</button>
+</div>
+
+<div class="tab on">
+ <h2>Adoption &amp; ROI</h2><p class="note">The leadership view: plain-language usage, ROI, and what people ask.</p>
+ <div class="mrow"><div class="mc"><div class="mn">Queries handled</div><div class="ml">586</div></div><div class="mc"><div class="mn">Avg queries / day</div><div class="ml">27</div></div><div class="mc"><div class="mn">Active users</div><div class="ml">24</div></div><div class="mc"><div class="mn">Cost / query</div><div class="ml">$0.094</div></div></div>
+ <div style="height:12px"></div><div class="mrow"><div class="mc"><div class="mn">Time saved</div><div class="ml">4+ hrs/day</div><div class=cs>.team of 50 lookups</div></div><div class="mc"><div class="mn">Cost basis</div><div class="ml">$25/hr</div><div class=cs>logistics coordinator</div></div><div class="mc"><div class="mn">Est. cost / query</div><div class="ml">~10c</div><div class=cs>Gemini API spend</div></div><div class="mc"><div class="mn">Thumbs up : down</div><div class="ml">5 : 3</div><div class=cs>latest week</div></div></div>
+ <div class="panel"><h3>What people are asking about</h3><div class="cloud"><span style="font-size:27px;color:#6ea8fe;margin:5px 10px;display:inline-block;font-weight:600">Freight Order Status</span><span style="font-size:22px;color:#7ee0c0;margin:5px 10px;display:inline-block;font-weight:600">Shipment Tracking</span><span style="font-size:20px;color:#ffb454;margin:5px 10px;display:inline-block;font-weight:600">Data & Counts</span><span style="font-size:19px;color:#c7d0dc;margin:5px 10px;display:inline-block;font-weight:600">Company Policies</span><span style="font-size:18px;color:#6ea8fe;margin:5px 10px;display:inline-block;font-weight:600">SAP Document Flow</span><span style="font-size:17px;color:#7ee0c0;margin:5px 10px;display:inline-block;font-weight:600">Change History</span><span style="font-size:16px;color:#ffb454;margin:5px 10px;display:inline-block;font-weight:600">Reports & Queries</span><span style="font-size:15px;color:#c7d0dc;margin:5px 10px;display:inline-block;font-weight:600">Export & International</span><span style="font-size:15px;color:#6ea8fe;margin:5px 10px;display:inline-block;font-weight:600">Claims Processing</span><span style="font-size:14px;color:#7ee0c0;margin:5px 10px;display:inline-block;font-weight:600">Air Freight</span><span style="font-size:14px;color:#ffb454;margin:5px 10px;display:inline-block;font-weight:600">Carrier & BOL</span><span style="font-size:13px;color:#c7d0dc;margin:5px 10px;display:inline-block;font-weight:600">Warehouse & Pallets</span><span style="font-size:13px;color:#6ea8fe;margin:5px 10px;display:inline-block;font-weight:600">Hazmat & Compliance</span><span style="font-size:13px;color:#7ee0c0;margin:5px 10px;display:inline-block;font-weight:600">Dashboard & Analytics</span><span style="font-size:13px;color:#ffb454;margin:5px 10px;display:inline-block;font-weight:600">Chat History</span><span style="font-size:13px;color:#c7d0dc;margin:5px 10px;display:inline-block;font-weight:600">Quotation & Pricing</span><span style="font-size:12px;color:#6ea8fe;margin:5px 10px;display:inline-block;font-weight:600">Conversational</span></div></div>
+</div>
+
+<div class="tab">
+ <h2>How the assistant answers</h2><p class="note">Intent mix and where each answer's data came from.</p>
+ <div class="g2">
+  <div class="panel"><h3>Intent breakdown</h3><svg viewBox="0 0 470 150" width="100%"><text x="0" y="17" fill="#9aa4b2" font-size="11.5">Freight order status</text><rect x="155" y="5" width="260.0" height="13" rx="3" fill="#6ea8fe"/><text x="421.0" y="17" fill="#e6e9ef" font-size="11">142</text><text x="0" y="41" fill="#9aa4b2" font-size="11.5">Data & counts</text><rect x="155" y="29" width="179.4" height="13" rx="3" fill="#6ea8fe"/><text x="340.4" y="41" fill="#e6e9ef" font-size="11">98</text><text x="0" y="65" fill="#9aa4b2" font-size="11.5">Shipment tracking</text><rect x="155" y="53" width="130.0" height="13" rx="3" fill="#6ea8fe"/><text x="291.0" y="65" fill="#e6e9ef" font-size="11">71</text><text x="0" y="89" fill="#9aa4b2" font-size="11.5">Company policy / SOP</text><rect x="155" y="77" width="100.7" height="13" rx="3" fill="#6ea8fe"/><text x="261.7" y="89" fill="#e6e9ef" font-size="11">55</text><text x="0" y="113" fill="#9aa4b2" font-size="11.5">Document flow</text><rect x="155" y="101" width="73.2" height="13" rx="3" fill="#6ea8fe"/><text x="234.2" y="113" fill="#e6e9ef" font-size="11">40</text><text x="0" y="137" fill="#9aa4b2" font-size="11.5">Change history</text><rect x="155" y="125" width="47.6" height="13" rx="3" fill="#6ea8fe"/><text x="208.6" y="137" fill="#e6e9ef" font-size="11">26</text></svg></div>
+  <div class="panel"><h3>Response source</h3><p class="note" style="margin:-4px 0 10px">Tool call vs. knowledge base vs. ungrounded (model only).</p><div style="display:flex;gap:20px;align-items:center;flex-wrap:wrap"><svg viewBox="0 0 140 140" width="140" height="140"><circle cx="70" cy="70" r="52" fill="none" stroke="#6ea8fe" stroke-width="20" stroke-dasharray="181.4 145.3" stroke-dashoffset="0.0" transform="rotate(-90 70 70)"/><circle cx="70" cy="70" r="52" fill="none" stroke="#8892a0" stroke-width="20" stroke-dasharray="123.2 203.6" stroke-dashoffset="-181.4" transform="rotate(-90 70 70)"/><circle cx="70" cy="70" r="52" fill="none" stroke="#7ee0c0" stroke-width="20" stroke-dasharray="22.2 304.6" stroke-dashoffset="-304.6" transform="rotate(-90 70 70)"/></svg><div><div style="display:flex;align-items:center;gap:6px;font-size:12px;margin:4px 0"><span style="width:10px;height:10px;border-radius:2px;background:#6ea8fe;display:inline-block"></span>Tool calls <span style="color:#9aa4b2">352 (55%)</span></div><div style="display:flex;align-items:center;gap:6px;font-size:12px;margin:4px 0"><span style="width:10px;height:10px;border-radius:2px;background:#8892a0;display:inline-block"></span>Ungrounded (LLM only) <span style="color:#9aa4b2">239 (37%)</span></div><div style="display:flex;align-items:center;gap:6px;font-size:12px;margin:4px 0"><span style="width:10px;height:10px;border-radius:2px;background:#7ee0c0;display:inline-block"></span>Knowledge base (RAG) <span style="color:#9aa4b2">43 (6%)</span></div></div></div></div>
+ </div>
+</div>
+
+<div class="tab">
+ <h2>Reliability &amp; models</h2><p class="note">The engineering view: system health and model routing.</p>
+ <div class="mrow"><div class="mc"><div class="mn">Error rate</div><div class="ml">0%</div></div><div class="mc"><div class="mn">Tool reliability</div><div class="ml">100%</div><div class=cs>.62/62</div></div><div class="mc"><div class="mn">Models routed</div><div class="ml">7</div></div><div class="mc"><div class="mn">Avg response</div><div class="ml">33.4s</div></div></div>
+ <div class="panel"><h3>Responses by model (7 routed by task type)</h3><svg viewBox="0 0 470 150" width="100%"><text x="0" y="17" fill="#9aa4b2" font-size="11.5">gemini-2.5-flash</text><rect x="155" y="5" width="260.0" height="13" rx="3" fill="#6ea8fe"/><text x="421.0" y="17" fill="#e6e9ef" font-size="11">549</text><text x="0" y="41" fill="#9aa4b2" font-size="11.5">gemini-3.1-flash-lite</text><rect x="155" y="29" width="4.7" height="13" rx="3" fill="#6ea8fe"/><text x="165.7" y="41" fill="#e6e9ef" font-size="11">10</text><text x="0" y="65" fill="#9aa4b2" font-size="11.5">gemini-3.1-pro-customtools</text><rect x="155" y="53" width="4.3" height="13" rx="3" fill="#6ea8fe"/><text x="165.3" y="65" fill="#e6e9ef" font-size="11">9</text><text x="0" y="89" fill="#9aa4b2" font-size="11.5">arena-model</text><rect x="155" y="77" width="3.8" height="13" rx="3" fill="#6ea8fe"/><text x="164.8" y="89" fill="#e6e9ef" font-size="11">8</text><text x="0" y="113" fill="#9aa4b2" font-size="11.5">gemini-2.5-pro</text><rect x="155" y="101" width="2.4" height="13" rx="3" fill="#6ea8fe"/><text x="163.4" y="113" fill="#e6e9ef" font-size="11">5</text><text x="0" y="137" fill="#9aa4b2" font-size="11.5">gemini-pro-latest</text><rect x="155" y="125" width="1.4" height="13" rx="3" fill="#6ea8fe"/><text x="162.4" y="137" fill="#e6e9ef" font-size="11">3</text></svg></div>
+</div>
+
+<div class="tab">
+ <h2>Automated evaluation</h2>
+ <p class="note">Every grounded response is scored by an LLM-as-judge across 7 quality dimensions (subjective); every tool call is checked by deterministic runtime assertions (objective, binary pass/fail the model cannot talk past).</p>
+ <div class="mrow"><div class="mc"><div class="mn">Overall</div><div class="ml">0.92</div><div class=cs>.7-dim judge</div></div><div class="mc"><div class="mn">Faithfulness</div><div class="ml">0.96</div></div><div class="mc"><div class="mn">Relevance</div><div class="ml">0.96</div></div><div class="mc"><div class="mn">Completeness</div><div class="ml">0.91</div></div><div class="mc"><div class="mn">Groundedness</div><div class="ml">0.94</div></div><div class="mc"><div class="mn">Tool routing</div><div class="ml">0.96</div></div><div class="mc"><div class="mn">Query correctness</div><div class="ml">0.95</div></div><div class="mc"><div class="mn">Error handling</div><div class="ml">0.98</div></div></div>
+ <h2>Runtime assertions</h2><div class="mrow"><div class="mc"><div class="mn">Assertions run</div><div class="ml">168</div></div><div class="mc"><div class="mn">Pass rate</div><div class="ml">94%</div></div><div class="mc"><div class="mn">Passed</div><div class="ml">157</div></div><div class="mc"><div class="mn">Failed</div><div class="ml">11</div></div></div>
+ <h2>Multi-agent trace evaluation</h2>
+ <p class="note">The upgrade I am proudest of: I moved evaluation from single-call scoring to full multi-agent trace analysis. Instead of grading only the final answer, the system scores every step in a turn, the routing decision, each tool call, and the hand-offs between agents, so it catches sequencing and hand-off failures that are invisible when you look at the output alone.</p>
+ <div class="panel"><h3>One turn, scored step by step</h3>
+  <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;font-size:12.5px">
+   <div class="box" style="border-color:#244b38"><b style="color:#7ee0c0">1 &#10003; Route</b><span>intent to Agent Framework</span></div><span style="color:#9aa4b2">&rarr;</span>
+   <div class="box" style="border-color:#244b38"><b style="color:#7ee0c0">2 &#10003; Agent pipeline</b><span>Google ADK &middot; /process/stream</span></div><span style="color:#9aa4b2">&rarr;</span>
+   <div class="box" style="border-color:#244b38"><b style="color:#7ee0c0">3 &#10003; Rate lookup</b><span>ClickHouse run_query</span></div><span style="color:#9aa4b2">&rarr;</span>
+   <div class="box" style="border-color:#244b38"><b style="color:#7ee0c0">4 &#10003; Compose draft</b><span>faithful to fetched data</span></div>
+  </div>
+  <p class="note" style="margin:12px 0 0">A single-call evaluator would have scored step 4's answer as correct and missed that step 2 called the wrong pipeline. Trace-level scoring flags the exact step that broke.</p>
+ </div>
+</div>
+
+<h2 style="margin-top:34px">How it is built</h2>
+<p class="note">Hub-and-spoke over the Model Context Protocol (MCP), on Google Cloud Run. Independent, swappable spokes; one failing backend never takes down the rest.</p>
+<div class="arch">
+ <div class="box hub"><b>OpenWebUI hub</b><span>chat interface + LLM router &middot; Cloud Run</span></div>
+ <div class="conn">— MCP PROTOCOL —</div>
+ <div class="spokes"><div class="box"><b>ClickHouse MCP</b><span>analytics warehouse</span></div><div class="box"><b>SAP TM MCP</b><span>transport mgmt APIs</span></div><div class="box"><b>Agent Framework MCP</b><span>multi-agent pipelines</span></div></div>
+ <div class="pipe"><span>DEPLOY:</span><div class="box">GitHub</div>→<div class="box">Cloud Build</div>→<div class="box">Artifact Registry</div>→<div class="box">Cloud Run</div></div>
+</div>
+
+<h2>The payoff for operations</h2>
+<div class="two">
+ <div class="col bad"><h3>BEFORE</h3><ul><li>5-minute SAP lookup per order</li><li>Requires SAP training and transaction codes</li><li>SOPs buried in shared drives</li><li>Audit trails require change-log navigation</li></ul></div>
+ <div class="col good"><h3>AFTER</h3><ul><li>10-second natural-language query</li><li>No SAP expertise needed, plain English</li><li>SOPs searchable by question</li><li>Change history in one question</li></ul></div>
+</div>
+<div class="payoff"><b>4+ hours</b> saved daily for a team running 50 order lookups</div>
+
+<h2>Product decisions that made it trustworthy</h2>
+<div class="pt"><ul>
+ <li><b>Self-generating dashboard, two audiences.</b> Typing "generate a dashboard" produces a business view (plain language, ROI) or a full engineering view (all tabs, technical metrics), so leadership and the tech team each see what they need.</li>
+ <li><b>Two-layer evaluation.</b> LLM-as-judge for subjective quality, deterministic assertions for objective tool-call correctness the judge could be fooled on. Neither alone is enough.</li>
+ <li><b>Grounding over generation.</b> Answers trace to SAP, the warehouse, or the KB; a "To Be Reviewed" staging tab holds metrics and flagged responses for human validation before they are trusted.</li>
+ <li><b>Routing across 7 models</b> by task type, balancing cost, latency, and quality, on an MCP contract that keeps every backend swappable.</li>
+</ul></div>
+
+<p class="foot">Built by Malvika Sanghvi at Radiant Global Logistics (AI Product intern, 2026). Metrics reproduced from the live multi-tab dashboard I built (May–Jun 2026); internal identifiers, table names, and customer data omitted. Recreated for portfolio use.</p>
+</div>
+<script>
+function tab(i,btn){document.querySelectorAll('.tab').forEach((t,j)=>t.classList.toggle('on',j===i));document.querySelectorAll('.tabs button').forEach(b=>b.classList.remove('on'));btn.classList.add('on');}
+</script></body></html>
