@@ -50,7 +50,7 @@ ul.pt{margin:6px 0 0;padding-left:18px}ul.pt li{margin:8px 0;font-size:13.8px}ul
 <script>function playYT(){document.getElementById('ytFacade').innerHTML='<iframe src="https://www.youtube.com/embed/e5KgX8Y6F94?autoplay=1" title="SkinScore AI walkthrough" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;border:0"></iframe>';}</script>
 
 <h2>The problem</h2>
-<p class="note">Existing scanners like Yuka run an ingredient-hazard scan, but miss the two things that actually matter: <b>efficacy</b> (a "vitamin C serum" may not contain the active at an effective concentration) and <b>personal fit</b> (a great product for one person can be wrong for another's skin, medications, or sensitivities). SkinScore answers "is this right for <em>you</em>, and will it do what it claims?"</p>
+<p class="note">Existing scanners like Yuka run an ingredient-hazard scan, but miss the two things that actually matter: <b>efficacy</b> (a "vitamin C serum" may not contain the active at an effective concentration) and <b>personal fit</b> (a great product for one person can be wrong for another's skin, medications, or sensitivities). SkinScore answers "is this right for <em>you</em>, and will it do what it claims?" The product direction came out of <b>23 user interviews</b> that surfaced how often a product’s marketing claim and its ingredient list diverge.</p>
 
 <h2>What it does</h2>
 <div class="g3">
@@ -87,6 +87,7 @@ PostgreSQL  (profiles, products, ingredient_evidence, reviews - all RLS-scoped)<
  <li><b>Deterministic scoring, LLM at the edges.</b> The scoring math is deterministic, so identical inputs return identical, explainable, reproducible verdicts. LLMs handle the fuzzy work (interview, parsing, enrichment) around the core, never the score itself. This is what makes it consistent where a raw chatbot isn't.</li>
  <li><b>Evidence over assertion.</b> Every factual claim is grounded in a curated knowledge base (PubMed / CIR / SCCS) with citations, rather than a one-off LLM answer.</li>
  <li><b>A floor rule for safety.</b> A single high-risk dimension can't be averaged away into a friendly overall score.</li>
+ <li><b>Tested like a product people act on.</b> A <b>30+ case trust-and-safety regression gate</b> runs on every change; it surfaced and closed <b>5 safety gaps</b>, and the live scoring engine held <b>0 breaches across 21 adversarial attempts</b>.</li>
  <li><b>Honest build scope.</b> The frontend was scaffolded with an AI app-builder and customized; the backend, the scoring engine, the adaptive interview, the evidence pipeline, and the data model, is the hand-architected core, built with Claude as an engineering collaborator.</li>
 </ul></div>
 
