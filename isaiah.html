@@ -1,15 +1,15 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Isaiah — Voice help for older adults</title>
-<meta name="description" content="Isaiah is a patient neural voice agent that walks older adults through everyday technology problems in plain language, and hands off to a real person when needed. An independent AI product prototype by Malvika Sanghvi.">
+<meta name="description" content="Isaiah is a patient neural voice agent that walks older adults through everyday technology problems in plain language, and hands off to a real person when needed. An independent AI product case study by Malvika Sanghvi.">
 <meta property="og:title" content="Isaiah — Voice help for older adults">
-<meta property="og:description" content="A patient neural voice agent for older adults, with RAG-grounded steps and a human hand-off. Independent AI product prototype by Malvika Sanghvi.">
+<meta property="og:description" content="A patient neural voice agent for older adults, with RAG-grounded steps and a human hand-off. Independent AI product case study by Malvika Sanghvi.">
 <meta property="og:type" content="website">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8E%A7%3C/text%3E%3C/svg%3E">
 <style>
 :root{--bg:#f4efe6;--card:#ffffff;--ink:#2a2a28;--mut:#6d6a63;--teal:#2a9d8f;--teal-d:#1f7d72;--teal-soft:#e7f4f1;--line:#e7e0d3;--fs:1}
 *{box-sizing:border-box}body{margin:0;background:linear-gradient(160deg,#fbf7ef 0%,#eef5f1 55%,#e4efe9 100%);color:var(--ink);font-family:"Segoe UI",-apple-system,Roboto,Helvetica,Arial,sans-serif;line-height:1.55;min-height:100vh;font-size:calc(16px*var(--fs))}
-.top{max-width:760px;margin:0 auto;padding:18px 20px 0}.back{color:var(--mut);text-decoration:none;font-size:15px}
-.wrap{max-width:760px;margin:0 auto;padding:10px 20px 50px}
+.top{max-width:820px;margin:0 auto;padding:18px 20px 0}.back{color:var(--mut);text-decoration:none;font-size:15px}
+.wrap{max-width:820px;margin:0 auto;padding:10px 20px 55px}
 .tagrow{color:var(--teal-d);font-weight:700;letter-spacing:.06em;text-transform:uppercase;font-size:12.5px;margin:10px 0 2px}
 h1{font-size:2em;margin:0 0 6px}.lede{color:var(--mut);font-size:1.05em;margin:0 0 16px}
 .controls{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:12px}
@@ -18,28 +18,46 @@ h1{font-size:2em;margin:0 0 6px}.lede{color:var(--mut);font-size:1.05em;margin:0
 .lang{border:2px solid var(--line);background:#fff;color:var(--teal-d);border-radius:999px;padding:5px 12px;font-size:.9em;font-weight:600}
 .tsize{display:flex;align-items:center;gap:6px;color:var(--mut);font-size:.85em}
 .tsize button{border:2px solid var(--line);background:#fff;border-radius:8px;width:38px;height:34px;font-weight:700;cursor:pointer;color:var(--ink)}
-.vnote{max-width:760px;margin:0 auto 14px;color:var(--mut);font-size:.8em;text-align:center;background:#fff;border:1px solid var(--line);border-radius:12px;padding:9px 14px;line-height:1.5}
-.card{background:var(--card);border:1px solid var(--line);border-radius:30px;padding:28px 22px 30px;box-shadow:0 24px 60px rgba(42,120,110,.14);text-align:center;position:relative;overflow:hidden}
+.vnote{color:var(--mut);font-size:.8em;text-align:center;background:#fff;border:1px solid var(--line);border-radius:12px;padding:9px 14px;line-height:1.5;margin-bottom:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:30px;padding:26px 22px 28px;box-shadow:0 24px 60px rgba(42,120,110,.14);text-align:center;position:relative;overflow:hidden}
 .card::before{content:"";position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,#37b0a1,#2a7d72)}
-.avatar{width:112px;height:112px;border-radius:50%;margin:2px auto 8px;background:linear-gradient(150deg,#37b0a1,#2a7d72);display:flex;align-items:center;justify-content:center;color:#fff;font-size:2.6em;font-weight:700;box-shadow:0 12px 30px rgba(42,157,143,.35)}
-.name{font-weight:700;font-size:1.1em;margin-top:2px}.name span{color:var(--mut);font-weight:400;font-size:.82em}
-.instruct{font-size:1.15em;line-height:1.6;margin:12px auto 6px;max-width:560px}
-.widgetbox{margin:18px auto 6px;min-height:96px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px}
-.widgetnote{color:var(--mut);font-size:.85em;max-width:520px;margin:6px auto 0;line-height:1.5}
-.human{margin-top:18px;color:var(--mut);font-size:.98em;line-height:1.5}
-.human b{color:var(--teal-d)}
-.designbox{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px 20px;margin-top:24px}
-.designbox h2{font-size:1.05em;margin:0 0 8px}.designbox li{margin:7px 0;font-size:.95em}.designbox b{color:var(--teal-d)}
-.impact{background:var(--teal-soft);border:1px solid #cfe9e2;border-radius:14px;padding:14px 16px;margin-top:16px;font-size:.95em;line-height:1.6}
-.impact b{color:var(--teal-d)}
-.foot{color:var(--mut);font-size:.8em;margin-top:22px;line-height:1.6}
-@media(max-width:560px){h1{font-size:1.6em}}
+.avatar{width:104px;height:104px;border-radius:50%;margin:2px auto 8px;background:linear-gradient(150deg,#37b0a1,#2a7d72);display:flex;align-items:center;justify-content:center;color:#fff;font-size:2.5em;font-weight:700;box-shadow:0 12px 30px rgba(42,157,143,.35)}
+.name{font-weight:700;font-size:1.1em}.name span{color:var(--mut);font-weight:400;font-size:.82em}
+.instruct{font-size:1.12em;line-height:1.6;margin:12px auto 6px;max-width:560px}
+.widgetbox{margin:16px auto 4px;min-height:70px;display:flex;flex-direction:column;align-items:center;gap:8px}
+.widgetnote{color:var(--mut);font-size:.85em;max-width:520px;margin:4px auto 0;line-height:1.5}
+.human{margin-top:16px;color:var(--mut);font-size:.96em;line-height:1.5}.human b{color:var(--teal-d)}
+/* case-study spine */
+.flow{display:flex;gap:8px;flex-wrap:wrap;margin:30px 0 4px}
+.flow .st{display:flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 13px;font-size:.8em;color:var(--mut)}
+.flow .st b{color:var(--ink);font-weight:600}
+.flow .n{width:19px;height:19px;border-radius:50%;background:var(--teal-soft);color:var(--teal-d);font-size:.72em;font-weight:700;display:flex;align-items:center;justify-content:center;flex:none}
+.stage{display:flex;align-items:baseline;gap:10px;margin:34px 0 6px}
+.stage .num{color:var(--teal-d);font-weight:800;font-size:1.15em}.stage h2{margin:0;font-size:1.2em}
+.note{color:var(--mut);font-size:.98em;margin:0 0 10px;line-height:1.6}.note b{color:var(--ink)}
+.g4{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:8px}
+.pcard{background:#fff;border:1px solid var(--line);border-radius:16px;padding:15px}
+.pcard .lbl{font-size:.72em;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:#c26b4a;margin-bottom:5px}
+.pcard h3{margin:0 0 5px;font-size:.95em}.pcard p{margin:0;color:var(--mut);font-size:.86em}
+.panel{background:#fff;border:1px solid var(--line);border-radius:18px;padding:16px 20px;margin-top:8px}
+ul.pt{margin:2px 0 0;padding-left:18px}ul.pt li{margin:8px 0;font-size:.96em;color:var(--mut)}ul.pt b{color:var(--ink)}
+.metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:8px}
+.metric{background:var(--teal-soft);border:1px solid #cfe9e2;border-radius:14px;padding:12px 14px}
+.metric .k{font-size:.72em;color:var(--teal-d);text-transform:uppercase;letter-spacing:.05em;font-weight:700}
+.metric .val{font-size:.98em;color:var(--ink);font-weight:700;margin-top:4px;line-height:1.35}
+details.hood{margin-top:10px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:2px 18px}
+details.hood>summary{cursor:pointer;color:var(--ink);font-size:.98em;font-weight:700;padding:12px 0;list-style:none}
+details.hood>summary::-webkit-details-marker{display:none}
+details.hood>summary:before{content:"▸  ";color:var(--teal-d)}
+details.hood[open]>summary:before{content:"▾  "}
+.foot{color:var(--mut);font-size:.8em;margin-top:24px;line-height:1.6;border-top:1px solid var(--line);padding-top:14px}
 elevenlabs-convai{display:block}
+@media(max-width:560px){h1{font-size:1.6em}.g4{grid-template-columns:1fr}.metrics{grid-template-columns:1fr}}
 </style></head><body>
 <div class="top"><a class="back" href="index.html">&larr; Back to portfolio</a>
 <div class="tagrow">Independent project &middot; Voice AI &middot; Accessibility</div>
 <h1>Isaiah</h1>
-<p class="lede">A patient voice helper for older adults navigating technology, in plain, jargon-free steps, with a hand-off to a real person when needed.</p></div>
+<p class="lede">A patient voice helper for older adults navigating technology, in plain, jargon-free steps, with a hand-off to a real person the moment it's needed. Talk to him below, then read how I built him.</p></div>
 <div class="wrap">
 <div class="controls">
  <div class="langs"><span class="langlbl">Speaks:</span>
@@ -47,49 +65,78 @@ elevenlabs-convai{display:block}
  </div>
  <div class="tsize">Text<button id="tminus" title="Smaller text" aria-label="Smaller text">A&minus;</button><button id="tplus" title="Bigger text" aria-label="Bigger text">A+</button></div>
 </div>
-<p class="vnote">This is a live voice agent. Tap the ‘Start a call’ button at the bottom-right, allow your microphone when asked, and just talk. Speak whichever language is easiest for you. (The voice agent loads only on the published site, not in a preview.)</p>
+<p class="vnote">This is a live voice agent. Tap the &lsquo;Start a call&rsquo; button at the bottom-right, allow your microphone when asked, and just talk. Speak whichever language is easiest for you. (The voice agent loads only on the published site, not in a preview.)</p>
 <div class="card">
  <div class="avatar" id="avatar">I</div>
  <div class="name">Isaiah <span>&middot; here to help</span></div>
- <p class="instruct">Tap ‘Start a call’ (bottom-right of the screen) and tell me what is happening with your device. Take your time, there is no rush, and nothing you ask is a silly question.</p>
+ <p class="instruct">Tap &lsquo;Start a call&rsquo; (bottom-right of the screen) and tell me what is happening with your device. Take your time, there is no rush, and nothing you ask is a silly question.</p>
  <div class="widgetbox">
   <elevenlabs-convai agent-id="agent_9601m1sdtdzeek9szgf0b41dcb6k"></elevenlabs-convai>
-  <p class="widgetnote" id="wnote">If you do not see a “Start a call” button at the bottom-right, you are viewing a preview. The live voice agent runs on the published web page, where it can use your microphone.</p>
+  <p class="widgetnote" id="wnote">If you do not see a &ldquo;Start a call&rdquo; button at the bottom-right, you are viewing a preview. The live voice agent runs on the published web page, where it can use your microphone.</p>
  </div>
- <div class="human">Prefer a person? Just say <b>“I would like to talk to a real person”</b> and Isaiah will connect you. Anything to do with passwords, accounts, or payments always goes to a human.</div>
+ <div class="human">Prefer a person? Just say <b>&ldquo;I would like to talk to a real person&rdquo;</b> and Isaiah will connect you. Anything to do with passwords, accounts, or payments always goes to a human.</div>
 </div>
-<div class="designbox">
- <h2>Why it matters</h2>
- <ul>
-  <li><b>Before:</b> when technology confuses them, older adults often wait on a busy family member or give up on the task entirely.</li>
-  <li><b>After:</b> common problems get solved in one patient, plain-language call, and only the small share that truly needs a human, or anything touching accounts and payments, is handed off.</li>
- </ul>
+
+<div class="flow">
+ <span class="st"><span class="n">1</span><b>Why I built it</b></span>
+ <span class="st"><span class="n">2</span><b>Who it's for</b></span>
+ <span class="st"><span class="n">3</span><b>The real problem</b></span>
+ <span class="st"><span class="n">4</span><b>The bet &amp; the calls</b></span>
+ <span class="st"><span class="n">5</span><b>How I'd measure it</b></span>
+ <span class="st"><span class="n">6</span><b>What's next</b></span>
 </div>
-<div class="designbox">
- <h2>Designed for a vulnerable user, not a power user</h2>
- <ul>
-  <li><b>Ease first:</b> large adjustable type, one obvious button, high contrast, and no time pressure, so it works when someone is anxious.</li>
-  <li><b>Emotional safety before the fix,</b> one micro-step at a time, never "just" or "simply."</li>
-  <li><b>A human is always one request away,</b> and passwords, accounts, and payments are always handed to a person.</li>
-  <li><b>Meets people in their language</b>, English, Spanish, and major Indian languages, spoken back in the same language.</li>
- </ul>
- <div class="impact"><b>Reasoned impact:</b> the segment most tech support ignores is older adults, who abandon tasks or route every problem to a relative. A calm voice agent that resolves common cases in the moment, grounds each step in real device manuals instead of guessing, and cleanly escalates the rest deflects the "call my kid" moment while keeping reassurance and account-safety human. <b>What stays human:</b> hands-on judgment, anything touching credentials or money, and any caller who simply wants a person.</div>
+
+<div class="stage"><span class="num">1</span><h2>Why I built it</h2></div>
+<p class="note">When something goes wrong with a phone or a TV, most of us just poke around until it works. For a lot of older adults, that same moment is genuinely frightening, they worry they've broken something expensive, they feel foolish, and their options are to wait on a busy family member or give up on the task entirely. I wanted to build the patient, never-rushed helper that meets them right there, before the fear turns into "I just won't use it."</p>
+
+<div class="stage"><span class="num">2</span><h2>Who I built it for</h2></div>
+<p class="note">Older adults facing everyday technology, the users most products quietly design *around* rather than *for*. Designing for someone anxious and non-technical raised the bar on everything: the pace, the language, the layout, even the choice to make this page warm and calm instead of a dark, techy dashboard. That's a deliberate call, not an accident.</p>
+
+<div class="stage"><span class="num">3</span><h2>The real problem is emotional before it's technical</h2></div>
+<p class="note">The thing I kept coming back to: the blocker usually isn't the router, it's the panic. Solve the feeling first and the fix becomes easy. So the whole product is built to remove four very human failure points before it ever gives a technical step.</p>
+<div class="g4">
+ <div class="pcard"><div class="lbl">Panic</div><h3>"Did I break it?"</h3><p>The fear of having done something irreversible freezes people before they even start.</p></div>
+ <div class="pcard"><div class="lbl">Jargon</div><h3>Words nobody explains</h3><p>"Toggle the input source" means nothing. Every unexplained term is another reason to give up.</p></div>
+ <div class="pcard"><div class="lbl">Overload</div><h3>Too many steps at once</h3><p>"Go to settings, then network, then reset" is three chances to lose the thread.</p></div>
+ <div class="pcard"><div class="lbl">Embarrassment</div><h3>Feeling like a burden</h3><p>People stop asking for help long before they run out of problems.</p></div>
 </div>
-<p class="foot">Isaiah is a designed persona and working prototype. The voice agent runs on ElevenLabs Agents (real-time speech-in and speech-out with one warm neural voice, multilingual, RAG-grounded on real device-support material) with automatic hand-off to a human. For this prototype the human-transfer and callback-scheduling tools are wired to lightweight mock endpoints rather than a paid telephony or scheduling account, so the full workflow can be demonstrated end to end without live billing. Indian-language greetings are AI-drafted and pending a native-speaker review. Built by Malvika Sanghvi.</p>
+
+<div class="stage"><span class="num">4</span><h2>The bet, and the calls behind it</h2></div>
+<p class="note">Isaiah is a patient neural voice agent. He settles the person first, then gives exactly one small, physical step at a time and waits for a "done" before the next. A few decisions made him work rather than just talk.</p>
+<div class="panel"><ul class="pt">
+ <li><b>A real neural voice, not the browser's.</b> My first version used the browser's built-in speech. It came out robotic and different on every device, exactly the wrong feel for a nervous caller. So I moved to a single warm, consistent neural voice, because for this user, *how* it sounds is part of whether they trust it.</li>
+ <li><b>Grounded in real guides, never guessing.</b> He answers from verified device and support material, not off the top of the model's head. If he doesn't know, he says so and runs a safe reset or hands off, guessing at a fix for a scared person is the one thing I won't allow.</li>
+ <li><b>A human is always one sentence away.</b> Anything touching passwords, accounts, or money, or any caller who's still stuck or just wants a person, is handed to a human. On confusion, he escalates on his own rather than digging a deeper hole.</li>
+ <li><b>Voice first, but never voice only.</b> If a mic isn't available, the same help works as text. The person is anxious enough without a dead end.</li>
+</ul></div>
+
+<div class="stage"><span class="num">5</span><h2>How I'd know it's working</h2></div>
+<p class="note">For a support agent, the honest measure isn't call volume, it's whether people leave <b>calmer and unstuck</b>. So the metrics are built around resolution and reassurance, not engagement.</p>
+<div class="metrics">
+ <div class="metric"><div class="k">North Star</div><div class="val">Issue resolved, caller calmer</div></div>
+ <div class="metric"><div class="k">Trust signal</div><div class="val">Sentiment lift, start &rarr; end</div></div>
+ <div class="metric"><div class="k">Safety</div><div class="val">Clean human hand-off rate</div></div>
+</div>
+<p class="note" style="margin-top:10px">Every call is auto-scored afterward (did it resolve? did the caller's sentiment improve?), the same evaluation habit I built at Radiant, applied to a very different product. I'd watch containment (fixed without a human) balanced against <em>appropriate</em> escalation, because a good escalation is a success here, not a failure. For this prototype the human-transfer and callback tools are wired to lightweight mocks, so the full loop can be shown end to end without a paid telephony account.</p>
+
+<div class="stage"><span class="num">6</span><h2>What's next, and what stays human</h2></div>
+<div class="panel"><ul class="pt">
+ <li><b>Language, done right.</b> He's multilingual (English, Spanish, and major Indian languages), but the non-English greetings still get a native-speaker review before I'd call them finished, close enough isn't good enough for someone's first impression.</li>
+ <li><b>What stays human.</b> Reassurance, judgment, and anything touching accounts or payments. Isaiah removes the fear and the easy blockers; a person handles the rest.</li>
+</ul></div>
+
+<details class="hood"><summary>Under the hood (for the engineers in the room)</summary>
+<p class="note" style="margin-top:4px">Isaiah runs on ElevenLabs Agents: real-time speech in and out with one warm neural voice, multilingual, grounded (RAG) on real device-support material, with an automatic hand-off to a human. The human-transfer and callback-scheduling tools are backed by lightweight mock webhooks for this prototype, so no paid telephony or scheduling account is needed to demo the whole workflow. Post-call analysis scores each conversation for resolution and sentiment.</p>
+</details>
+
+<p class="foot">Isaiah is a designed persona and working prototype, built by Malvika Sanghvi. Indian-language greetings are AI-drafted and pending a native-speaker review.</p>
 </div>
 <script>
-// Accessibility: adjustable page text size
 var fs=1,root=document.documentElement;
 function applyFs(){root.style.setProperty("--fs",fs);}
 document.getElementById("tplus").onclick=function(){fs=Math.min(1.6,fs+.15);applyFs();};
 document.getElementById("tminus").onclick=function(){fs=Math.max(.85,fs-.15);applyFs();};
-// Hide the preview note once the widget's custom element has actually upgraded/rendered
-window.addEventListener("load",function(){
-  setTimeout(function(){
-    var el=document.querySelector("elevenlabs-convai");
-    if(el && el.shadowRoot){var n=document.getElementById("wnote");if(n)n.style.display="none";}
-  },2500);
-});
+window.addEventListener("load",function(){setTimeout(function(){var el=document.querySelector("elevenlabs-convai");if(el&&el.shadowRoot){var n=document.getElementById("wnote");if(n)n.style.display="none";}},2500);});
 </script>
 <script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async></script>
 </body></html>
