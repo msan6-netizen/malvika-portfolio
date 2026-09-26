@@ -22,14 +22,13 @@ h2{font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:var(--mut)
 .more{color:var(--acc);font-size:13px;font-weight:600;margin-top:12px;display:inline-block}
 .foot{color:var(--mut);font-size:12.5px;margin-top:40px;border-top:1px solid var(--line);padding-top:16px}
 @media(max-width:760px){.grid{grid-template-columns:1fr}.hero h1{font-size:32px}}
-.card{position:relative}.card .live{position:absolute;top:13px;right:13px;display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--grn);background:#12241d;border:1px solid #2c5c48;border-radius:999px;padding:3px 10px}.card .live::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--grn);animation:livepulse 1.8s infinite}@keyframes livepulse{0%{box-shadow:0 0 0 0 rgba(126,224,192,.6)}70%{box-shadow:0 0 0 7px rgba(126,224,192,0)}100%{box-shadow:0 0 0 0 rgba(126,224,192,0)}}.trylive{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:12px}.trylive .tll{color:var(--mut);font-size:13px;margin-right:2px}.trylive .tl{background:#12241d;border:1px solid #2c5c48;color:var(--grn);border-radius:9px;padding:8px 13px;font-size:13.5px;font-weight:600}.trylive .tl:hover{border-color:var(--grn)}</style></head><body><div class="wrap">
+.card{position:relative}.card .stretch{position:absolute;inset:0;z-index:1;border-radius:16px}.cardactions{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:12px;position:relative;z-index:2}.cardactions .more{margin-top:0}.appbtn{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:var(--grn);background:#12241d;border:1px solid #2c5c48;border-radius:8px;padding:6px 12px}.appbtn:hover{border-color:var(--grn)}.card .live{position:absolute;top:13px;right:13px;display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--grn);background:#12241d;border:1px solid #2c5c48;border-radius:999px;padding:3px 10px}.card .live::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--grn);animation:livepulse 1.8s infinite}@keyframes livepulse{0%{box-shadow:0 0 0 0 rgba(126,224,192,.6)}70%{box-shadow:0 0 0 7px rgba(126,224,192,0)}100%{box-shadow:0 0 0 0 rgba(126,224,192,0)}}.trylive{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:12px}.trylive .tll{color:var(--mut);font-size:13px;margin-right:2px}.trylive .tl{background:#12241d;border:1px solid #2c5c48;color:var(--grn);border-radius:9px;padding:8px 13px;font-size:13.5px;font-weight:600}.trylive .tl:hover{border-color:var(--grn)}</style></head><body><div class="wrap">
 <div class="hero">
  <p class="role">AI Product Manager</p>
  <h1>Malvika Sanghvi</h1>
  <p>I build AI products end to end and ground them in evaluation so people can trust the output. Two years of hands-on product management on top of six-plus years in growth and GTM across logistics and real estate, plus an M.S. in Information Systems from the University of Washington. Below are five things I've built.</p>
  <div class="links">
   <a class="link primary" href="Malvika_Sanghvi_Resume.pdf" target="_blank" rel="noopener">Resume (PDF)</a>
-  <a class="link" href="https://github.com/msan6-netizen" target="_blank" rel="noopener">GitHub</a>
   <a class="link" href="https://www.linkedin.com/in/malvika-sanghvi/" target="_blank" rel="noopener">LinkedIn</a>
   <a class="link" href="mailto:malvikasanghvi@gmail.com">Email</a>
  </div>
@@ -49,30 +48,42 @@ h2{font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:var(--mut)
   <div class="tags"><span class="tag">Multi-LLM routing</span><span class="tag">MCP</span><span class="tag">RAG</span><span class="tag">Evaluation</span></div>
   <span class="more">Explore the dashboard →</span>
  </a>
- <a class="card" href="skinscore.html">
+ <div class="card">
   <span class="live">Live</span>
   <span class="kicker">Independent · Full-stack AI</span>
   <h3>SkinScore AI</h3>
   <p>Personalized skincare analysis: an adaptive AI interview builds your skin profile, then a product is scored BUY / CAUTION / SKIP against you, with a deterministic core and evidence-grounded verdicts. Video walkthrough included.</p>
   <div class="tags"><span class="tag">React + Supabase</span><span class="tag">Claude</span><span class="tag">PubMed RAG</span><span class="tag">Deterministic scoring</span></div>
-  <span class="more">See the walkthrough →</span>
- </a>
- <a class="card" href="isaiah.html">
+  <div class="cardactions">
+   <a class="more" href="skinscore.html">See the walkthrough →</a>
+   <a class="appbtn" href="https://future-proof-portals.vercel.app" target="_blank" rel="noopener">Open the live app ↗</a>
+  </div>
+  <a class="stretch" href="skinscore.html" aria-label="Open the SkinScore AI case study"></a>
+ </div>
+ <div class="card">
   <span class="live">Live</span>
   <span class="kicker">Independent · Voice AI</span>
   <h3>Isaiah — voice agent for older adults</h3>
   <p>A patient neural voice agent that walks older adults through tech problems in plain, jargon-free steps and hands off to a human when needed. Talk to him live in your browser.</p>
   <div class="tags"><span class="tag">Voice AI</span><span class="tag">ElevenLabs</span><span class="tag">RAG</span><span class="tag">Accessibility</span><span class="tag">Human-in-the-loop</span></div>
-  <span class="more">Talk to Isaiah →</span>
- </a>
- <a class="card" href="options_flow_dashboard.html">
+  <div class="cardactions">
+   <a class="more" href="isaiah.html">Read the story →</a>
+   <a class="appbtn" href="isaiah_app.html">Talk to Isaiah live ↗</a>
+  </div>
+  <a class="stretch" href="isaiah.html" aria-label="Open the Isaiah case study"></a>
+ </div>
+ <div class="card">
   <span class="live">Live</span>
   <span class="kicker">Independent · Machine Learning</span>
   <h3>Unusual options-flow detection</h3>
   <p>A two-step ML pipeline (Isolation Forest + Random Forest, 30+ engineered features) that flags anomalous options activity in ~53K rows of real market data. Interactive explorer with live anomaly detection.</p>
   <div class="tags"><span class="tag">scikit-learn</span><span class="tag">Anomaly detection</span><span class="tag">Feature engineering</span></div>
-  <span class="more">Open the explorer →</span>
- </a>
+  <div class="cardactions">
+   <a class="more" href="options_flow_dashboard.html">Read the case study →</a>
+   <a class="appbtn" href="options_live.html">Score a live flow ↗</a>
+  </div>
+  <a class="stretch" href="options_flow_dashboard.html" aria-label="Open the options-flow case study"></a>
+ </div>
  <a class="card" href="adaptive_roi.html">
   <span class="kicker">Graduate capstone · Concept + prototype</span>
   <h3>Adaptive-ROI — AI for student success</h3>
